@@ -1,9 +1,17 @@
 services:
   web:
-    build: .
+    build: ./frontend
+    image: newweb
+    container_name: newweb
     ports:
-      - "80:80"
+      - "8080:8080"
     restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8080/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 5s
 
 networks:
   default:

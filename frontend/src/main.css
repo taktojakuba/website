@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Martel:wght@200;300;400;600;700;800;900&family=Moulpali&display=swap');
+@import 'tailwindcss';
+
+body {
+    background-color: #1c1d1e!important;
+    color: #e8e6e3!important;
+    border-color: #e8e6e3!important;
+    border-width: 4px!important;
+}
+.scanlines {
+  position: relative;
+  isolation: isolate;
+}
+
+.scanlines::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    rgba(0,0,0,0) 0px,
+    rgba(0,0,0,0) 1px,
+    rgba(0,0,0,0.15) 2px
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.title {
+    font-family: 'Moulpali', serif;
+}
+.subtitle {
+    font-family: 'Caudex', serif;
+}
+.desc {
+    font-family: 'Martel', serif;
+}
+::selection {
+    background-color: #e8e6e3!important;
+    color: #0d0e0f!important;
+}
+::-moz-selection {
+    background-color: #e8e6e3!important;
+    color: #0d0e0f!important;
+}
+
