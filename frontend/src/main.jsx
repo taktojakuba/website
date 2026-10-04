@@ -17,20 +17,35 @@ document.addEventListener('pointermove', (e) => {
 
 document.body.addEventListener('pointerover', (e) => {
   const target = e.target
-  if (target instanceof HTMLElement) {
-    const interactive = target.closest('a, button, input, textarea, select')
-    if (interactive) {
-      document.body.classList.add('interactive')
-    }
+  if (!(target instanceof HTMLElement)) return
+
+  if (target.closest('img')) {
+    document.body.classList.add('img-hover')
+    document.body.classList.remove('interactive')
+    return
+  }
+
+  if (target.closest('a, button, input, textarea, select')) {
+    document.body.classList.add('interactive')
+    document.body.classList.remove('img-hover')
   }
 })
 
 document.body.addEventListener('pointerout', (e) => {
   const target = e.target
-  if (target instanceof HTMLElement) {
-    const interactive = target.closest('a, button, input, textarea, select')
-    if (interactive) {
+  if (!(target instanceof HTMLElement)) return
+
+  if (target.closest('img') || target.closest('a, button, input, textarea, select')) {
+    const related = e.relatedTarget
+    if (!(related instanceof HTMLElement)) {
       document.body.classList.remove('interactive')
+      document.body.classList.remove('img-hover')
+      return
+    }
+
+    if (!related.closest('img') && !related.closest('a, button, input, textarea, select')) {
+      document.body.classList.remove('interactive')
+      document.body.classList.remove('img-hover')
     }
   }
 })
