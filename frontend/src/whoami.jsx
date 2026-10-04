@@ -1,12 +1,16 @@
 import rei from './assets/rei.png'
+import { motion } from 'framer-motion'
 
 function Whoami() {
     return (
         <div className="relative mx-3 my-6 border-dashed border-4 p-2">
-            <img
+            <motion.img
                 src={rei}
-                alt=" Rei"
-                className="absolute -top-10 right-0 h-26 w-26 grayscale transition-all duration-500 hover:grayscale-0"
+                alt="Rei"
+                initial={{ top: '-80px' }}
+                animate={{ top: '-40px' }}
+                transition={{ duration: 0.5 }}
+                className="absolute right-0 h-26 w-26 grayscale transition-all duration-500 hover:grayscale-0"
             />
             <div className="mb-2 border-4 p-2">
                 <h1 className="title text-3xl leading-tight">Welcome !!</h1>
