@@ -4,6 +4,7 @@ import Gallery from './gallery.jsx'
 import Whoami from './whoami.jsx'
 import Projects from './projects.jsx'
 import Contacts from './contacts.jsx'
+import ThemeToggle from './themetoggle.jsx'
 import './main.css'
 
 const cursor = document.createElement('div')
@@ -57,6 +58,7 @@ rootEl.className = 'scanlines min-h-screen'
 
 createRoot(rootEl).render(
   <StrictMode>
+    <ThemeToggle />
     <div className="border-4 m-3 p-3">
       <Whoami />
       <Gallery />

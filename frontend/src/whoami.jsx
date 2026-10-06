@@ -10,7 +10,7 @@ function Whoami() {
                 initial={{ top: '-80px' }}
                 animate={{ top: '-40px' }}
                 transition={{ duration: 0.5 }}
-                className="absolute right-0 h-26 w-26 grayscale transition-all duration-500 hover:grayscale-0"
+                className="absolute right-0 h-26 w-26"
             />
             <div className="mb-2 border-4 p-2">
                 <h1 className="title text-3xl leading-tight">Welcome !!</h1>

@@ -1,55 +1,68 @@
 @import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Martel:wght@200;300;400;600;700;800;900&family=Moulpali&display=swap');
 @import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+
+:root {
+  --bg: #1c1d1e;
+  --fg: #e8e6e3;
+
+}
+.dark {
+  --bg: #ffffcd;
+  --fg: #2e2c27;
+}
 
 html, body, * {
-    cursor: none !important;
+  cursor: none !important;
+  transition: background-color 0.5s, color 0.5s, border-color 0.5s;
 }
 
 .cursor {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 13px;
-    height: 13px;
-    border: 1.5px solid #ffffff;
-    background: transparent;
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    transition:
-        width 0.2s ease,
-        height 0.2s ease,
-        transform 0.2s ease,
-        border-width 0.2s ease;
-    z-index: 9999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 13px;
+  height: 13px;
+  border: 1.5px solid var(--fg);
+  background: transparent;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.2s ease,
+    height 0.2s ease,
+    transform 0.2s ease,
+    border-width 0.2s ease;
+  z-index: 9999;
 }
 
 .cursor::before {
-    content: "";
-    position: absolute;
-    inset: -4px;
-    border: 1.5px solid #ffffff;
-    border-radius: 2px;
-    transform: rotate(0deg);
-    animation: spinCursor 4s linear infinite;
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border: 1.5px solid var(--fg);
+  border-radius: 2px;
+  transform: rotate(0deg);
+  animation: spinCursor 4s linear infinite;
 }
 
 @keyframes spinCursor {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
 }
 
 body.interactive .cursor,
 body.img-hover .cursor {
-    width: 20px;
-    height: 20px;
-    transform: translate(-50%, -50%) scale(1.05);
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, -50%) scale(1.05);
 }
 
 body {
-    background-color: #1c1d1e !important;
-    color: #e8e6e3 !important;
-    border-color: #e8e6e3 !important;
-    border-width: 4px !important;
+  background-color: var(--bg) !important;
+  color: var(--fg) !important;
+  border-color: var(--fg) !important;
+  border-width: 4px !important;
 }
 
 .scanlines {
@@ -71,20 +84,27 @@ body {
 }
 
 .title {
-    font-family: 'Moulpali', serif;
+  font-family: 'Moulpali', serif;
 }
 .subtitle {
-    font-family: 'Caudex', serif;
+  font-family: 'Caudex', serif;
 }
 .desc {
-    font-family: 'Martel', serif;
-}
-::selection {
-    background-color: #e8e6e3!important;
-    color: #0d0e0f!important;
-}
-::-moz-selection {
-    background-color: #e8e6e3!important;
-    color: #0d0e0f!important;
+  font-family: 'Martel', serif;
 }
 
+::selection {
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
+}
+::-moz-selection {
+  background-color: var(--fg) !important;
+  color: var(--bg) !important;
+}
+.dark img {
+  @apply sepia transition-all duration-500 hover:sepia-0;
+}
+
+img {
+  @apply grayscale sepia-0 hover:grayscale-0;
+}

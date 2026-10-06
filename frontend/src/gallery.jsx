@@ -19,7 +19,7 @@ function Gallery() {
                 initial={{ right: '-20px'}}
                 animate={{ right: '10px'}}
                 transition={{ duration: 0.5 }}
-                className="absolute -top-16 right-5 h-20 w-20 grayscale transition-all duration-500 hover:grayscale-0"
+                className="absolute -top-16 right-5 h-20 w-20"
             />
             {[rice1, rice2, rice3, rice4, rice5, rice6, rice7, rice8].map((src, i) => (
                 <div key={i} className="border-4 p-2">
@@ -29,7 +29,7 @@ function Gallery() {
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ duration: 0.5 }}
-                        className="z-1 h-auto w-full object-cover grayscale transition-all duration-500 hover:grayscale-0 hover:scale-150 hover:z-10"
+                        className="relative z-1 h-auto w-full object-cover transition-all duration-500 hover:z-10 hover:scale-150"
                     />
                 </div>
             ))}
