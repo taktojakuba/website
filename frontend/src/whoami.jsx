@@ -23,7 +23,7 @@ function Whoami() {
                 <h3 className="subtitle text-xl">About me:</h3>
                 <p className="desc mt-2 text-base leading-relaxed">
                     Polish student who is into computers <br></br>
-                    In free time I like to watch anime's
+                    In free time I like to watch anime
                 </p>
             </div>
 
