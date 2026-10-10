@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Martel:wght@200;300;400;600;700;800;900&family=Moulpali&display=swap');
 @import 'tailwindcss';
+@plugin "daisyui";
 @custom-variant dark (&:where(.dark, .dark *));
 
 
@@ -101,10 +102,23 @@ body {
   background-color: var(--fg) !important;
   color: var(--bg) !important;
 }
-.dark img {
-  @apply sepia transition-all duration-500 hover:sepia-0;
+img {
+  @apply grayscale transition-all duration-500;
 }
 
-img {
-  @apply grayscale sepia-0 transition-all duration-500 hover:grayscale-0;
+img:hover,
+.hover-3d:hover img {
+  @apply grayscale-0;
+}
+
+.dark img {
+  @apply sepia;
+}
+
+.dark img:hover,
+.dark .hover-3d:hover img {
+  @apply sepia-0;
+}
+a { 
+  @apply hover:border-1
 }
