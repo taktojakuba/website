@@ -37,7 +37,7 @@ function Whoami() {
             <div className="border-4 p-2">
                 <h3 className="subtitle text-xl">My current setup</h3>
                 <p className="desc mt-2 text-base leading-relaxed">
-                    System Nixos with dwl
+                    System Nixos with weebwl all runing on  thinkpad l13 gen 2 with weebinux kernel as terminal I use weebst
                 </p>
             </div>
         </div>

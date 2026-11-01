@@ -6,8 +6,11 @@ function Projects() {
                     <ul>
                         <li><a href="https://github.com/taktojakuba/Justfetch" target="_blank" rel="noopener noreferrer">JustFetch</a></li>
                         <li><a href="https://github.com/taktojakuba/JustRun" target="_blank" rel="noopener noreferrer">JustRun</a></li>
+                        <li><a href="https://github.com/taktojakuba/JustManage" target="_blank" rel="noopener noreferrer">JustManage</a></li>
                         <li><a href="https://github.com/taktojakuba/dotfiles" target="_blank" rel="noopener noreferrer">Dotfiles</a></li>
                         <li><a href="https://github.com/taktojakuba/nixos" target="_blank" rel="noopener noreferrer">Nixos Configuration</a></li>
+                        <li><a href="https://github.com/taktojakuba/weebwl" target="_blank" rel="noopener noreferrer">weebwl</a></li>
+                        <li><a href="https://github.com/taktojakuba/weebst" target="_blank" rel="noopener noreferrer">weebst</a></li>
                     </ul>
                 </p>
             </div>
